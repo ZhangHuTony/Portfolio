@@ -18,10 +18,11 @@ function Toolstack() {
     { icon: <SiVisualstudiocode />, name: "Visual Studio Code", link: "https://code.visualstudio.com/" },
     { icon: <SiJupyter />, name: "Jupyter", link: "https://jupyter.org/" },
     { icon: <SiRstudio />, name: "RStudio", link: "https://posit.co/products/open-source/rstudio/" },
+    { icon: <SiGooglecolab />, name: "Google Colab", link: "https://colab.google/" },
     { icon: <SiNotion />, name: "Notion", link: "https://www.notion.so/" },
     { icon: <SiObsidian />, name: "Obsidian", link: "https://obsidian.md/" },
     { icon: <SiTodoist />, name: "Todoist", link: "https://todoist.com/" },
-    { icon: <SiGooglecolab />, name: "Google Colab", link: "https://colab.google/" },
+
   ];
 
   return (
