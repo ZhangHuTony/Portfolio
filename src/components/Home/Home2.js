@@ -23,7 +23,7 @@ function Home2() {
               <i> <b className="purple">Python, R, and C++</b> </i>,
               and I am continuously exploring new technologies to enhance my skillset.
               <br /> <br /> My fields of interest include
-              <i> <b className="purple">Machine Learning</b></i>, and 
+              <i> <b className="purple">Machine Learning</b></i> and 
               <i> <b className="purple"> Computational Simulations</b></i>.
               <br /> <br /> Whenever possible, I enjoy applying my knowledge to real-world challenges by developing projects that leverage 
               <b className="purple"> data-driven decision-making</b>.

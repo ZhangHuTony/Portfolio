@@ -25,7 +25,7 @@ function Techstack() {
     { icon: <DiGit />, name: "Git", link: "https://git-scm.com/" },
     { icon: <DiPython />, name: "Python", link: "https://www.python.org/" },
     { icon: <SiR />, name: "R", link: "https://www.r-project.org/" },
-    { icon: <DiJava />, name: "Java", link: "https://www.java.com/" },
+    { icon: <DiJava />, name: "Java", link: "https://www.java.com/en/download/help/whatis_java.html" },
     { icon: <SiD3Dotjs />, name: "D3.js", link: "https://d3js.org/" },
     { icon: <SiPandas />, name: "Pandas", link: "https://pandas.pydata.org/" },
     { icon: <SiPytorch />, name: "PyTorch", link: "https://pytorch.org/" },
