@@ -33,7 +33,7 @@ function Projects() {
               imgPath={D1ChemoGrad}
               isBlog={false}
               title="1D Tumor Chemokine Gradient Simulation"
-              description="A computational simulation coded in R which attempted to model the T-cell movement within a tumor based on the amount of chemokines being produced by 2 different cancer phenotypes."
+              description="A computational simulation coded in R which attempted to model the T-cell movement within a tumor based on the amount of chemokine being produced by 2 different cancer phenotypes."
               ghLink="https://github.com/ZhangHuTony/1D-ChemokineGradientSim/"
             />
           </Col>
