@@ -11,7 +11,7 @@ function AboutCard() {
             Hi, my name is <span className="purple">Tony Zhang </span>
             and I am from <span className="purple"> Salt Lake City, Utah.</span>
             <br />
-            I am currently a student at the Univeristy of Utah, pursuing of Bachelor of Science in <span className = "purple"> Data Science</span>.
+            I am currently a student at the Univeristy of Utah, pursuing a Bachelor of Science in <span className = "purple"> Data Science</span>.
             <br />
             Apart from coding, these are some other activities that I love to do!
           </p>
