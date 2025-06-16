@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.f1db93ca.css",
-    "main.js": "/Portfolio/static/js/main.f842c821.js",
+    "main.js": "/Portfolio/static/js/main.d581a79b.js",
     "static/js/415.4d6acbeb.chunk.js": "/Portfolio/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/Portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/twodchemokinevis.png": "/Portfolio/static/media/twodchemokinevis.3d7a2dd77eed95d21e81.png",
     "static/media/d1chemgradsim.png": "/Portfolio/static/media/d1chemgradsim.13a42deaa9dbf1669fc6.png",
-    "static/media/Zhang-Tony_Resume.pdf": "/Portfolio/static/media/Zhang-Tony_Resume.85052cc0cae09af957e9.pdf",
+    "static/media/Zhang-Tony_Resume.pdf": "/Portfolio/static/media/Zhang-Tony_Resume.9b10b7916274afbb136f.pdf",
     "static/media/UsUrbanGrowthMap.png": "/Portfolio/static/media/UsUrbanGrowthMap.98f8941b94d08e05f2de.png",
     "static/media/home-main.svg": "/Portfolio/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg",
     "static/media/about.png": "/Portfolio/static/media/about.aee0f771fbfc1e7b8fa8.png",
@@ -15,12 +16,12 @@
     "static/media/pre.svg": "/Portfolio/static/media/pre.4410c5baaa673cc131da.svg",
     "index.html": "/Portfolio/index.html",
     "main.f1db93ca.css.map": "/Portfolio/static/css/main.f1db93ca.css.map",
-    "main.f842c821.js.map": "/Portfolio/static/js/main.f842c821.js.map",
+    "main.d581a79b.js.map": "/Portfolio/static/js/main.d581a79b.js.map",
     "415.4d6acbeb.chunk.js.map": "/Portfolio/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/Portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f1db93ca.css",
-    "static/js/main.f842c821.js"
+    "static/js/main.d581a79b.js"
   ]
 }
