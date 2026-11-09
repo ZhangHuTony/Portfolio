@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem('theme');
+          var t = s || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)" />
+
+    <title>Tony Zhang — Data Science &amp; Robotics, University of Utah</title>
+    <meta
+      name="description"
+      content="Tony Zhang is an undergraduate researcher at the University of Utah working on multi-agent reinforcement learning from human demonstrations and multi-robot planning. Applying to PhD programs for Fall 2027."
+    />
+    <link rel="canonical" href="https://zhanghutony.github.io/Portfolio/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tony Zhang — Data Science &amp; Robotics, University of Utah" />
+    <meta
+      property="og:description"
+      content="Undergraduate researcher in multi-agent reinforcement learning and multi-robot planning. Applying to PhD programs for Fall 2027."
+    />
+    <meta property="og:url" content="https://zhanghutony.github.io/Portfolio/" />
+    <meta property="og:image" content="https://zhanghutony.github.io/Portfolio/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tony Zhang — Data Science &amp; Robotics, University of Utah" />
+    <meta
+      name="twitter:description"
+      content="Undergraduate researcher in multi-agent reinforcement learning and multi-robot planning."
+    />
+    <meta name="twitter:image" content="https://zhanghutony.github.io/Portfolio/og.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tony Zhang",
+        "url": "https://zhanghutony.github.io/Portfolio/",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Utah" },
+        "sameAs": [
+          "https://github.com/ZhangHuTony",
+          "https://www.linkedin.com/in/tony-hu-zhang/"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="root"></div>
+    <noscript>This site needs JavaScript enabled.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

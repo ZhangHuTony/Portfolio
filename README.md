@@ -1,23 +1,37 @@
-<h2 align="center">
-  Portfolio Website<br/>
-  <a href="https://zhanghutony.github.io/Portfolio" target="_blank">ZhangHuTony</a> 
-</h2>
+# Tony Zhang — Portfolio
 
+Personal site for https://ZhangHuTony.github.io/Portfolio/. A single page built with
+Vite and React: hero, research, publications and talks, projects, contact. Light theme by
+default with a dark toggle.
 
-This site was built by using [Soumyajit4419](https://github.com/soumyajit4419/Portfolio) as a template.
+## Develop
 
+```bash
+npm install
+npm run dev        # http://localhost:5173/Portfolio/  (the bare root 404s on purpose)
+npm run build      # outputs dist/
+npm run preview    # serves dist/ at http://localhost:4173/Portfolio/
+```
 
-## Getting Started
+## Edit content
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+All text, links, tags and image references live in `src/data.js`. Components contain no content.
 
-## 🛠 Installation and Setup Instructions
+- A link with `href: null` is hidden until you add a URL (see the `TODO` comments for the
+  paper, project page and benchmark repo).
+- `image: null` gives a card without a figure. `image.fit: 'contain'` shows a diagram uncropped.
+- The CV is `public/Tony_Zhang_CV.pdf`. Replace the file to update it.
 
-1. Installation: `npm install`
+## Images
 
-2. In the project directory, you can run: `npm start`
+Originals go in `assets-src/` (git-ignored). `npm run images` (needs Python and Pillow) crops and
+converts them to optimized WebP in `src/assets/img/` and writes `public/og.jpg`. Crop focal points
+are in `scripts/optimize-images.py`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+## Deploy
 
+```bash
+npm run deploy     # builds, then publishes dist/ to the gh-pages branch
+```
+
+GitHub Pages serves the `gh-pages` branch, so no repository settings need to change.

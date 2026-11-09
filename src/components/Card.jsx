@@ -1,0 +1,62 @@
+import { useReveal } from '../hooks/useReveal.js';
+import { ExternalIcon } from './Icons.jsx';
+
+// Renders only links that have an href. Placeholders (href: null) in data.js
+// stay hidden until a real URL is filled in.
+export function LinkList({ links }) {
+  const live = (links || []).filter((link) => link.href);
+  if (live.length === 0) return null;
+  return (
+    <div className="links">
+      {live.map((link) => (
+        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
+          {link.label}
+          <ExternalIcon className="ext-icon" />
+        </a>
+      ))}
+    </div>
+  );
+}
+
+// One card for both research and project items.
+export default function Card({ item, index = 0 }) {
+  const ref = useReveal();
+  const { image, org, role, period, title, summary, description, badge, tags, links } = item;
+  const text = summary || description;
+
+  return (
+    <article
+      className="card reveal"
+      ref={ref}
+      style={{ transitionDelay: `${Math.min(index * 60, 150)}ms` }}
+    >
+      {image && (
+        <div className={`card-figure ${image.fit === 'contain' ? 'contain' : ''}`}>
+          <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+        </div>
+      )}
+      <div className="card-body">
+        {org && <p className="card-meta">{org}</p>}
+        <h3 className="card-title">{title}</h3>
+        {role && (
+          <p className="card-role">
+            {role}
+            {period ? ` · ${period}` : ''}
+          </p>
+        )}
+        {badge && <span className="badge">{badge}</span>}
+        <p className="card-text">{text}</p>
+        {tags && tags.length > 0 && (
+          <ul className="tags">
+            {tags.map((tag) => (
+              <li className="tag" key={tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
+        <LinkList links={links} />
+      </div>
+    </article>
+  );
+}
