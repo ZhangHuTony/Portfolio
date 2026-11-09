@@ -5,13 +5,13 @@
 
 import heroImg from './assets/img/hero-auv.webp';
 import heroImg960 from './assets/img/hero-auv-960.webp';
-import ariaImg from './assets/img/research-aria-poster.webp';
-import frostImg from './assets/img/research-frost-auv.webp';
-import chemokine2dImg from './assets/img/project-2d-chemokine.webp';
+import ibmarlImg from './assets/img/research-ibmarl-method.webp';
+import consortImg from './assets/img/research-consort-holoocean.webp';
+import adlerImg from './assets/img/research-adler-2d.webp';
 import chemokine1dImg from './assets/img/project-1d-chemokine.webp';
 import urbanImg from './assets/img/project-urban-growth.webp';
 import podiumImg from './assets/img/talk-iros-podium.webp';
-import campImg from './assets/img/outreach-chip-camp.webp';
+import campImg from './assets/img/teaching-chip-camp.webp';
 
 export const site = {
   name: 'Tony Zhang',
@@ -52,7 +52,8 @@ export const site = {
 export const nav = [
   { label: 'Research', href: '#research' },
   { label: 'Publications', href: '#publications' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Other Projects', href: '#projects' },
+  { label: 'Teaching', href: '#teaching' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -64,38 +65,32 @@ export const research = [
     role: 'Undergraduate Researcher · Advisor: Daniel S. Brown',
     period: 'Jul 2025 – present',
     summary:
-      'One human teaches a whole team of agents through round-robin behavior cloning. An ensemble of centralized critics chooses between imitation and RL actions for each agent, and a gated imitation loss lets the final policies run decentralized. It surpasses imitation learning 2.6–4.2× faster than demonstration-based baselines on four VMAS tasks, and exceeds the demonstrator on two.',
+      'One person teaches a whole team by controlling one agent at a time. Each agent proposes an imitation action and an RL action, an ensemble of centralized critics picks among them, and a gated imitation loss lets the final policies run decentralized. On four cooperative benchmarks it surpasses imitation learning 2.6–4.2× faster than baselines on two tasks, is the only method to surpass it on the other two, and exceeds the demonstrator on two.',
     badge: 'IROS 2026 workshop · Best Paper Finalist',
     tags: ['Multi-agent RL', 'Imitation learning', 'PyTorch', 'VMAS'],
     image: {
-      src: ariaImg,
-      alt: 'Tony Zhang standing next to his IBMARL poster at IROS 2026',
-      fit: 'cover',
+      src: ibmarlImg,
+      alt: 'IBMARL method diagram: round-robin behavior cloning, online action proposals chosen by an ensemble of critics, and gated imitation during RL training',
+      fit: 'contain',
     },
-    links: [
-      // TODO: add the paper / poster / code URLs when they are public
-      { label: 'Paper', href: null },
-    ],
+    links: [{ label: 'Project page', href: 'https://zhanghutony.github.io/ibmarl/' }],
   },
   {
     id: 'consort',
-    title: 'CONSORT: Cooperative Navigation for GPS-Denied Escort Missions',
+    title: 'CONSORT: Multi-Robot Planning for Cooperative Localization in GPS-Denied Environments',
     org: 'FROST Lab, Brigham Young University',
     role: 'NSF REU Researcher · Advisor: Brady Moon',
     period: 'Jun – Aug 2026',
     summary:
-      "A centralized planner that routes support agents so a primary agent reaches its goal in minimum time while its localization uncertainty stays under a bound. It solved 80% of 50 randomized scenarios versus 54% for the strongest baseline, and Monte Carlo validation in HoloOcean matched predicted terminal uncertainty within 6%.",
+      'A centralized planner for the escort problem: a primary vehicle must reach its goal in minimum time with its localization uncertainty under a bound, while support vehicles are routed to hold it there. It searches a hexagonal lattice and refines with B-splines. It solved 80% of 50 scenarios versus 54% for the best baseline, and HoloOcean plans stayed collision-free with terminal uncertainty within 6% of the prediction.',
     badge: 'ICRA 2027 submission',
     tags: ['Belief-space planning', 'Multi-robot', 'Cooperative localization', 'Julia', 'HoloOcean'],
     image: {
-      src: frostImg,
-      alt: "A blue autonomous underwater vehicle on a stand among lakeshore rocks",
+      src: consortImg,
+      alt: 'HoloOcean simulation of two autonomous underwater vehicles above a seafloor with kelp',
       fit: 'cover',
     },
-    links: [
-      // TODO: add the lab project page / code URL
-      { label: 'Project page', href: null },
-    ],
+    links: [{ label: 'Project page', href: 'https://frostlab.byu.edu/consort-planner/' }],
   },
   {
     id: 'adler',
@@ -104,15 +99,18 @@ export const research = [
     role: 'Undergraduate Researcher · Advisor: Fred Adler',
     period: 'Jan 2024 – May 2025',
     summary:
-      'Built 1D and 2D simulations of chemokine gradients and T-cell migration in R and C++, compared with mouse-model data from Huntsman Cancer Institute. Also built ML pipelines that score melanoma cell-track quality from quantitative phase imaging.',
+      'Built 1D and 2D simulations of chemokine gradients and T-cell migration in R and C++, compared with mouse-model data from Huntsman Cancer Institute, and visualized them in ParaView (a Best Project nominee in Scientific Visualization). Also built ML pipelines that score melanoma cell-track quality from quantitative phase imaging.',
     badge: 'UROP grant · SRI funding',
     tags: ['Computational simulation', 'R', 'C++', 'ParaView'],
     image: {
-      src: chemokine2dImg,
+      src: adlerImg,
       alt: 'ParaView visualization of a 2D chemokine gradient and T-cell positions',
       fit: 'contain',
     },
-    links: [{ label: 'Code', href: 'https://github.com/ZhangHuTony/2D_ChemokineGradientVis' }],
+    links: [
+      { label: '1D simulation', href: 'https://github.com/ZhangHuTony/1D-ChemokineGradientSim/' },
+      { label: '2D visualization', href: 'https://github.com/ZhangHuTony/2D_ChemokineGradientVis' },
+    ],
   },
 ];
 
@@ -125,7 +123,7 @@ export const publications = [
     year: 2027,
     type: 'Under review',
     badge: null,
-    links: [], // TODO: add arXiv / project page when available
+    links: [{ label: 'Project page', href: 'https://frostlab.byu.edu/consort-planner/' }],
   },
   {
     title: 'Imitation Bootstrapped Multi-Agent Reinforcement Learning',
@@ -134,7 +132,7 @@ export const publications = [
     year: 2027,
     type: 'Under review',
     badge: null,
-    links: [],
+    links: [{ label: 'Project page', href: 'https://zhanghutony.github.io/ibmarl/' }],
   },
   {
     title: 'Imitation Bootstrapped Multi-Agent Reinforcement Learning',
@@ -143,7 +141,7 @@ export const publications = [
     year: 2026,
     type: 'Workshop paper',
     badge: 'Best Paper Finalist',
-    links: [], // TODO: add the workshop paper URL
+    links: [{ label: 'Project page', href: 'https://zhanghutony.github.io/ibmarl/' }], // TODO: add the workshop paper URL
   },
   {
     title: 'Modeling Phenotypic Plasticity with Barbie',
@@ -191,15 +189,6 @@ export const projects = [
     links: [{ label: 'GitHub', href: 'https://github.com/ZhangHuTony/1D-ChemokineGradientSim/' }],
   },
   {
-    title: '2D Chemokine Gradient Visualization',
-    description:
-      'Extends the 1D model to two dimensions for chemokine diffusion and T-cell movement, visualized in ParaView.',
-    tags: ['C++', 'ParaView', 'Scientific visualization'],
-    badge: 'Best Project nominee, Scientific Visualization 2025',
-    image: { src: chemokine2dImg, alt: 'ParaView rendering of the 2D simulation', fit: 'contain' },
-    links: [{ label: 'GitHub', href: 'https://github.com/ZhangHuTony/2D_ChemokineGradientVis' }],
-  },
-  {
     title: 'Flash vs. Native Sparse Attention Benchmark',
     description:
       'Course project at Tsinghua University: benchmarked Flash Sparse Attention against Native Sparse Attention on an NVIDIA A10 GPU for Hardware/Software Co-designed AI Systems.',
@@ -210,8 +199,31 @@ export const projects = [
   },
 ];
 
-export const outreachPhoto = {
+export const teaching = [
+  {
+    kind: 'Tutoring',
+    title: 'Mathematics Tutor',
+    org: 'Learning Center, University of Utah',
+    period: 'Aug 2025 – present',
+    points: [
+      'Tutor NCAA student-athletes in weekly standing sessions on college algebra, quadratic equations, statistics, and calculus.',
+      "Hold appointment-based sessions for students across the university, adapting explanations to each student's course and preparation.",
+    ],
+  },
+  {
+    kind: 'Outreach',
+    title: 'Volunteer Helper, Chip Camp',
+    org: 'Department of Electrical and Computer Engineering, Brigham Young University',
+    period: 'Summer 2026',
+    points: [
+      'Helped run a three-day engineering camp for students aged 12–14.',
+      'Led chemistry demonstrations and helped campers build and launch model rockets.',
+    ],
+  },
+];
+
+export const teachingFigure = {
   src: campImg,
   alt: 'Tony Zhang helping a camper solder a circuit board at BYU Chip Camp',
-  caption: 'Volunteering at BYU Chip Camp, 2026',
+  caption: 'Helping a camper solder at BYU Chip Camp, summer 2026',
 };

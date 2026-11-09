@@ -20,6 +20,7 @@ All text, links, tags and image references live in `src/data.js`. Components con
 - A link with `href: null` is hidden until you add a URL (see the `TODO` comments for the
   paper, project page and benchmark repo).
 - `image: null` gives a card without a figure. `image.fit: 'contain'` shows a diagram uncropped.
+- Project-site figures (IBMARL method diagram, CONSORT HoloOcean render) are saved in `assets-src/` and processed by `npm run images`.
 - The CV is `public/Tony_Zhang_CV.pdf`. Replace the file to update it.
 
 ## Images

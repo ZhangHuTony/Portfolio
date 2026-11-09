@@ -71,26 +71,29 @@ def main():
     lake = load("IMG_3264.jpg")
     save_webp(fit_width(lake, 1800), "hero-auv.webp", limit_kb=350)
     save_webp(fit_width(lake, 960), "hero-auv-960.webp", limit_kb=200)
-    save_webp(fit_width(crop_aspect(lake, 16 / 10, 0.47, 0.82, zoom=1.7), 1200), "research-frost-auv.webp")
 
     og = fit_width(crop_aspect(lake, 1200 / 630, 0.65, 0.45), 1200)
     og.save(os.path.join(PUBLIC, "og.jpg"), "JPEG", quality=80, progressive=True, optimize=True)
     print(f"  {'public/og.jpg':32s} {og.width}x{og.height}  {os.path.getsize(os.path.join(PUBLIC, 'og.jpg'))/1024:6.1f} KB")
 
-    poster = load("IMG_5664.jpg")
-    save_webp(fit_width(crop_aspect(poster, 16 / 10, 0.50, 0.35), 1200), "research-aria-poster.webp")
+    # Figures taken from the project websites (zhanghutony.github.io/ibmarl, frostlab.byu.edu/consort-planner)
+    save_webp(fit_width(load("ibmarl-fig2-method.webp"), 1400), "research-ibmarl-method.webp", quality=90)
+    save_webp(
+        fit_width(crop_aspect(load("consort-fig7-holoocean.webp"), 16 / 10, 0.5, 0.5), 1200),
+        "research-consort-holoocean.webp",
+    )
 
     podium = load("IMG_5698.png")
     save_webp(fit_width(crop_aspect(podium, 16 / 10, 0.50, 0.58), 1200), "talk-iros-podium.webp")
 
     camp = load("IMG_5525.jpg")
-    save_webp(fit_width(crop_aspect(camp, 4 / 3, 0.50, 0.40), 960), "outreach-chip-camp.webp")
+    save_webp(fit_width(crop_aspect(camp, 4 / 3, 0.50, 0.40), 960), "teaching-chip-camp.webp")
 
     urban = load("UsUrbanGrowthMap.png")
     save_webp(fit_width(crop_aspect(urban, 16 / 10, 0.5, 0.5), 1200), "project-urban-growth.webp")
 
     for src, dst in (("d1chemgradsim.png", "project-1d-chemokine.webp"),
-                     ("twodchemokinevis.png", "project-2d-chemokine.webp")):
+                     ("twodchemokinevis.png", "research-adler-2d.webp")):
         save_webp(load(src), dst, quality=90)
 
 

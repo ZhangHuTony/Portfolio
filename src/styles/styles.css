@@ -200,67 +200,61 @@ main:focus {
 
 /* ---------- Hero ---------- */
 .hero {
-  position: relative;
-  height: 78vh;
-  min-height: 480px;
-  max-height: 820px;
   margin-top: var(--nav-h);
-  overflow: hidden;
-  background: #1c2a38;
+  padding-block: clamp(32px, 5vw, 72px) 0;
 }
 
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: var(--photo-filter);
+.hero-inner {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+  align-items: center;
 }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(10, 18, 28, 0.62) 0%, rgba(10, 18, 28, 0.35) 45%, rgba(10, 18, 28, 0) 75%),
-    linear-gradient(180deg, rgba(10, 18, 28, 0) 60%, rgba(10, 18, 28, 0.35) 100%);
-  pointer-events: none;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-  max-width: var(--container);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  color: #fff;
+@media (min-width: 900px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 48px;
+  }
 }
 
 .hero h1 {
-  color: #fff;
   font-size: clamp(2.25rem, 5vw, 3.25rem);
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
 }
 
 .hero-title {
-  max-width: 28ch;
-  color: rgba(255, 255, 255, 0.95);
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  margin-top: 8px;
+  color: var(--text);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 500;
   line-height: 1.45;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+}
+
+.hero-intro {
+  margin-top: 20px;
+  color: var(--text-2);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.hero-edu {
+  margin: 16px 0 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+  color: var(--text-3);
+  font-size: 0.86rem;
+}
+
+.hero-edu li + li {
+  margin-top: 4px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 24px;
 }
 
 .btn {
@@ -268,87 +262,46 @@ main:focus {
   align-items: center;
   gap: 6px;
   padding: 9px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
   border-radius: 10px;
   background: transparent;
-  color: #fff;
+  color: var(--text);
   font-size: 0.9rem;
   font-weight: 600;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  color: #fff;
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--text);
   text-decoration: none;
 }
 
 .btn.primary {
-  background: #fff;
-  border-color: #fff;
-  color: #16202a;
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
 }
 
 .btn.primary:hover {
-  background: #e8eef5;
-  color: #16202a;
+  background: var(--text-2);
+  border-color: var(--text-2);
+  color: var(--bg);
 }
 
-.btn:focus-visible {
-  outline-color: #fff;
+.hero-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface);
 }
 
-@media (max-width: 720px) {
-  .hero {
-    height: 74vh;
-    min-height: 500px;
-  }
-
-  /* Keep Tony's face clear: text moves to the bottom of the photo. */
-  .hero-img {
-    object-position: 68% 30% !important;
-  }
-
-  .hero::after {
-    background: linear-gradient(
-      180deg,
-      rgba(10, 18, 28, 0) 35%,
-      rgba(10, 18, 28, 0.55) 70%,
-      rgba(10, 18, 28, 0.8) 100%
-    );
-  }
-
-  .hero-content {
-    justify-content: flex-end;
-    padding-bottom: 28px;
-  }
-}
-
-/* ---------- Intro ---------- */
-.intro {
-  padding-block: clamp(40px, 6vw, 72px) 0;
-}
-
-.intro-text {
-  max-width: 42rem;
-  color: var(--text);
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.intro-edu {
-  max-width: 42rem;
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  list-style: none;
-  padding-left: 0;
-  color: var(--text-3);
-  font-size: 0.9rem;
-}
-
-.intro-edu li + li {
-  margin-top: 4px;
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  filter: var(--photo-filter);
 }
 
 /* ---------- Sections ---------- */
@@ -391,14 +344,9 @@ main:focus {
 }
 
 @media (min-width: 960px) {
-  .grid.research {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1040px) {
+  .grid.research,
   .grid.projects {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -596,6 +544,17 @@ main:focus {
   padding-top: 0;
 }
 
+.points {
+  margin: 8px 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-2);
+  font-size: 0.9rem;
+}
+
+.points li + li {
+  margin-top: 4px;
+}
+
 .figure {
   border-radius: var(--radius);
   overflow: hidden;
@@ -623,25 +582,12 @@ main:focus {
   padding-block: clamp(40px, 6vw, 72px) 28px;
 }
 
-.contact {
-  display: grid;
-  gap: 28px;
-  grid-template-columns: 1fr;
-  align-items: center;
-}
-
-@media (min-width: 720px) {
-  .contact.has-photo {
-    grid-template-columns: 1fr 240px;
-  }
-}
-
-.contact h2 {
+.contact-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-.contact p {
+.contact-text {
   max-width: 52ch;
   color: var(--text-2);
 }
@@ -677,23 +623,6 @@ main:focus {
 .contact-link svg {
   width: 18px;
   height: 18px;
-}
-
-.contact-photo {
-  max-width: 280px;
-}
-
-.contact-photo img {
-  width: 100%;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  filter: var(--photo-filter);
-}
-
-.contact-photo figcaption {
-  margin-top: 8px;
-  color: var(--text-3);
-  font-size: 0.8rem;
 }
 
 .copyright {
