@@ -76,8 +76,10 @@ def main():
     og.save(os.path.join(PUBLIC, "og.jpg"), "JPEG", quality=80, progressive=True, optimize=True)
     print(f"  {'public/og.jpg':32s} {og.width}x{og.height}  {os.path.getsize(os.path.join(PUBLIC, 'og.jpg'))/1024:6.1f} KB")
 
-    # Figures taken from the project websites (zhanghutony.github.io/ibmarl, frostlab.byu.edu/consort-planner)
-    save_webp(fit_width(load("ibmarl-fig2-method.webp"), 1400), "research-ibmarl-method.webp", quality=90)
+    poster = load("IMG_5664.jpg")
+    save_webp(fit_width(crop_aspect(poster, 16 / 10, 0.50, 0.35), 1200), "research-aria-poster.webp")
+
+    # Figure taken from the CONSORT project site (frostlab.byu.edu/consort-planner)
     save_webp(
         fit_width(crop_aspect(load("consort-fig7-holoocean.webp"), 16 / 10, 0.5, 0.5), 1200),
         "research-consort-holoocean.webp",
@@ -92,9 +94,11 @@ def main():
     urban = load("UsUrbanGrowthMap.png")
     save_webp(fit_width(crop_aspect(urban, 16 / 10, 0.5, 0.5), 1200), "project-urban-growth.webp")
 
-    for src, dst in (("d1chemgradsim.png", "project-1d-chemokine.webp"),
-                     ("twodchemokinevis.png", "research-adler-2d.webp")):
-        save_webp(load(src), dst, quality=90)
+    save_webp(load("d1chemgradsim.png"), "project-1d-chemokine.webp", quality=90)
+
+    # Slide 6 of the final-project deck (image7.jpg): crop to the tissue region only.
+    tissue = load("adler-stained-tissue.jpg")
+    save_webp(tissue.crop((320, 205, 1010, 636)), "research-adler-tissue.webp", quality=88)
 
 
 if __name__ == "__main__":

@@ -8,6 +8,7 @@
   --border: rgba(22, 32, 42, 0.12);
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
+  --accent-contrast: #ffffff; /* text on solid accent buttons */
   --accent-soft: rgba(37, 99, 235, 0.1);
   --tag-bg: #eef4f8;
   --tag-text: #243b53;
@@ -34,6 +35,7 @@
   --border: rgba(240, 246, 252, 0.12);
   --accent: #58a6ff;
   --accent-hover: #79b8ff;
+  --accent-contrast: #0d1117;
   --accent-soft: rgba(88, 166, 255, 0.14);
   --tag-bg: rgba(88, 166, 255, 0.14);
   --tag-text: #79c0ff;

@@ -2,14 +2,22 @@ import { useReveal } from '../hooks/useReveal.js';
 import { ExternalIcon } from './Icons.jsx';
 
 // Renders only links that have an href. Placeholders (href: null) in data.js
-// stay hidden until a real URL is filled in.
+// stay hidden until a real URL is filled in. Links with `highlight: true`
+// (project websites) come first and render as buttons.
 export function LinkList({ links }) {
   const live = (links || []).filter((link) => link.href);
   if (live.length === 0) return null;
+  const ordered = [...live.filter((l) => l.highlight), ...live.filter((l) => !l.highlight)];
   return (
     <div className="links">
-      {live.map((link) => (
-        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
+      {ordered.map((link) => (
+        <a
+          key={link.label}
+          className={link.highlight ? 'link-btn' : undefined}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {link.label}
           <ExternalIcon className="ext-icon" />
         </a>

@@ -1,13 +1,14 @@
 // All site content lives here. Edit text, links and tags in this file only.
 // - A link with `href: null` is hidden until you fill in a URL.
+// - A link with `highlight: true` renders as a prominent button (used for project websites).
 // - `image: null` renders a card without a figure.
 // - `image.fit: 'contain'` shows a diagram uncropped on a light panel.
 
 import heroImg from './assets/img/hero-auv.webp';
 import heroImg960 from './assets/img/hero-auv-960.webp';
-import ibmarlImg from './assets/img/research-ibmarl-method.webp';
+import ariaImg from './assets/img/research-aria-poster.webp';
 import consortImg from './assets/img/research-consort-holoocean.webp';
-import adlerImg from './assets/img/research-adler-2d.webp';
+import adlerImg from './assets/img/research-adler-tissue.webp';
 import chemokine1dImg from './assets/img/project-1d-chemokine.webp';
 import urbanImg from './assets/img/project-urban-growth.webp';
 import podiumImg from './assets/img/talk-iros-podium.webp';
@@ -69,11 +70,11 @@ export const research = [
     badge: 'IROS 2026 workshop · Best Paper Finalist',
     tags: ['Multi-agent RL', 'Imitation learning', 'PyTorch', 'VMAS'],
     image: {
-      src: ibmarlImg,
-      alt: 'IBMARL method diagram: round-robin behavior cloning, online action proposals chosen by an ensemble of critics, and gated imitation during RL training',
-      fit: 'contain',
+      src: ariaImg,
+      alt: 'Tony Zhang standing next to his IBMARL poster at IROS 2026',
+      fit: 'cover',
     },
-    links: [{ label: 'Project page', href: 'https://zhanghutony.github.io/ibmarl/' }],
+    links: [{ label: 'Project website', href: 'https://zhanghutony.github.io/ibmarl/', highlight: true }],
   },
   {
     id: 'consort',
@@ -90,7 +91,7 @@ export const research = [
       alt: 'HoloOcean simulation of two autonomous underwater vehicles above a seafloor with kelp',
       fit: 'cover',
     },
-    links: [{ label: 'Project page', href: 'https://frostlab.byu.edu/consort-planner/' }],
+    links: [{ label: 'Project website', href: 'https://frostlab.byu.edu/consort-planner/', highlight: true }],
   },
   {
     id: 'adler',
@@ -104,8 +105,8 @@ export const research = [
     tags: ['Computational simulation', 'R', 'C++', 'ParaView'],
     image: {
       src: adlerImg,
-      alt: 'ParaView visualization of a 2D chemokine gradient and T-cell positions',
-      fit: 'contain',
+      alt: 'Fluorescence microscopy image of a stained tumor tissue section with a boxed region of interest',
+      fit: 'cover',
     },
     links: [
       { label: '1D simulation', href: 'https://github.com/ZhangHuTony/1D-ChemokineGradientSim/' },
@@ -123,7 +124,7 @@ export const publications = [
     year: 2027,
     type: 'Under review',
     badge: null,
-    links: [{ label: 'Project page', href: 'https://frostlab.byu.edu/consort-planner/' }],
+    links: [{ label: 'Project website', href: 'https://frostlab.byu.edu/consort-planner/', highlight: true }],
   },
   {
     title: 'Imitation Bootstrapped Multi-Agent Reinforcement Learning',
@@ -132,7 +133,7 @@ export const publications = [
     year: 2027,
     type: 'Under review',
     badge: null,
-    links: [{ label: 'Project page', href: 'https://zhanghutony.github.io/ibmarl/' }],
+    links: [{ label: 'Project website', href: 'https://zhanghutony.github.io/ibmarl/', highlight: true }],
   },
   {
     title: 'Imitation Bootstrapped Multi-Agent Reinforcement Learning',
@@ -141,7 +142,7 @@ export const publications = [
     year: 2026,
     type: 'Workshop paper',
     badge: 'Best Paper Finalist',
-    links: [{ label: 'Project page', href: 'https://zhanghutony.github.io/ibmarl/' }], // TODO: add the workshop paper URL
+    links: [{ label: 'Project website', href: 'https://zhanghutony.github.io/ibmarl/', highlight: true }], // TODO: add the workshop paper URL
   },
   {
     title: 'Modeling Phenotypic Plasticity with Barbie',
@@ -217,6 +218,7 @@ export const teaching = [
     period: 'Summer 2026',
     points: [
       'Helped run a three-day engineering camp for students aged 12–14.',
+      'Taught the basics of soldering to the campers.',
       'Led chemistry demonstrations and helped campers build and launch model rockets.',
     ],
   },
