@@ -1,5 +1,6 @@
 // All site content lives here. Edit text, links and tags in this file only.
 // - A link with `href: null` is hidden until you fill in a URL.
+// - `badge` can be a string or a list of strings.
 // - A link with `highlight: true` renders as a prominent button (used for project websites).
 // - `image: null` renders a card without a figure.
 // - `image.fit: 'contain'` shows a diagram uncropped on a light panel.
@@ -67,7 +68,7 @@ export const research = [
     period: 'Jul 2025 – present',
     summary:
       'One person teaches a whole team by controlling one agent at a time. Each agent proposes an imitation action and an RL action, an ensemble of centralized critics picks among them, and a gated imitation loss lets the final policies run decentralized. On four cooperative benchmarks it surpasses imitation learning 2.6–4.2× faster than baselines on two tasks, is the only method to surpass it on the other two, and exceeds the demonstrator on two.',
-    badge: 'IROS 2026 workshop · Best Paper Finalist',
+    badge: ['AAMAS 2027 submission', 'IROS 2026 workshop · Best Paper Finalist'],
     tags: ['Multi-agent RL', 'Imitation learning', 'PyTorch', 'VMAS'],
     image: {
       src: ariaImg,

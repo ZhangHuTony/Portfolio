@@ -52,7 +52,15 @@ export default function Card({ item, index = 0 }) {
             {period ? ` · ${period}` : ''}
           </p>
         )}
-        {badge && <span className="badge">{badge}</span>}
+        {badge && (
+          <div className="badges">
+            {[].concat(badge).map((b) => (
+              <span className="badge" key={b}>
+                {b}
+              </span>
+            ))}
+          </div>
+        )}
         <p className="card-text">{text}</p>
         {tags && tags.length > 0 && (
           <ul className="tags">
